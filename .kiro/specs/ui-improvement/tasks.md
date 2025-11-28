@@ -1,0 +1,81 @@
+# Implementation Plan
+
+- [ ] 1. Create vegetable data mapping module
+  - [ ] 1.1 Create VEGETABLE_DATA dictionary with all 15 vegetables
+    - Include emoji and Indonesian translation for each vegetable
+    - Structure: `{label: {"emoji": str, "indonesian": str}}`
+    - _Requirements: 2.1, 2.2, 2.3_
+  - [ ] 1.2 Write property test for vegetable data completeness
+    - **Property 1: Vegetable Label Data Completeness**
+    - **Validates: Requirements 2.1, 2.2, 2.3**
+  - [ ] 1.3 Write unit tests for VEGETABLE_DATA
+    - Test all 15 labels exist
+    - Test no empty emoji or Indonesian values
+
+- [ ] 2. Implement enhanced header and sidebar UI
+  - [ ] 2.1 Update page configuration and custom CSS
+    - Modern color scheme with green gradient
+    - Card styles with shadows and rounded corners
+    - Styled upload zone with dashed border
+    - _Requirements: 3.1, 3.2, 3.3_
+  - [ ] 2.2 Create informative header section
+    - App title with emoji and description
+    - Badge showing "15 Jenis Sayuran"
+    - _Requirements: 1.1_
+  - [ ] 2.3 Enhance sidebar with vegetable labels grid
+    - Display all 15 vegetables in 3-column grid
+    - Show emoji + English name + Indonesian name
+    - Add about section and developer credits
+    - _Requirements: 1.2, 2.1, 2.2, 2.3, 5.1, 5.2_
+
+- [ ] 3. Implement enhanced prediction results display
+  - [ ] 3.1 Create helper function for bilingual prediction output
+    - Return English name, Indonesian name, and emoji
+    - Handle unknown labels with fallback
+    - _Requirements: 4.1_
+  - [ ] 3.2 Write property test for bilingual display
+    - **Property 2: Prediction Result Bilingual Display**
+    - **Validates: Requirements 4.1**
+  - [ ] 3.3 Create helper function for top 5 predictions extraction
+    - Extract top 5 from probability array
+    - Sort descending by probability
+    - _Requirements: 4.3_
+  - [ ] 3.4 Write property test for top 5 predictions
+    - **Property 3: Top 5 Predictions Consistency**
+    - **Validates: Requirements 4.3**
+  - [ ] 3.5 Create low confidence warning logic
+    - Return warning flag if confidence < 0.7
+    - _Requirements: 4.4_
+  - [ ] 3.6 Write property test for low confidence threshold
+    - **Property 4: Low Confidence Warning Threshold**
+    - **Validates: Requirements 4.4**
+
+- [ ] 4. Update main UI with new components
+  - [ ] 4.1 Integrate enhanced header into app.py
+    - Replace old header with new informative header
+    - _Requirements: 1.1, 1.3_
+  - [ ] 4.2 Integrate enhanced sidebar into app.py
+    - Add vegetable labels grid
+    - Update about section with more details
+    - Add version info and credits
+    - _Requirements: 1.2, 2.1, 5.1, 5.2_
+  - [ ] 4.3 Integrate enhanced prediction results into app.py
+    - Show bilingual prediction (English + Indonesian + emoji)
+    - Display confidence with styled progress bar
+    - Show top 5 predictions chart
+    - Display warning for low confidence
+    - _Requirements: 4.1, 4.2, 4.3, 4.4_
+
+- [ ] 5. Checkpoint - Ensure all tests pass
+  - Ensure all tests pass, ask the user if questions arise.
+
+- [ ] 6. Final polish and cleanup
+  - [ ] 6.1 Add footer section with credits
+    - Developer name, version, last update
+    - _Requirements: 5.1, 5.2_
+  - [ ] 6.2 Final CSS adjustments and visual polish
+    - Ensure consistent styling across all components
+    - _Requirements: 3.1, 3.2, 3.4_
+
+- [ ] 7. Final Checkpoint - Ensure all tests pass
+  - Ensure all tests pass, ask the user if questions arise.
