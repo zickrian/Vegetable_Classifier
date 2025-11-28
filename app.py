@@ -274,12 +274,12 @@ if uploaded_file is not None:
     with col2:
         if model:
             with st.spinner('🔍 Sedang menganalisis...'):
-                # Preprocessing
+                # Preprocessing (same as notebook: resize -> normalize -> expand dims -> float32)
                 target_size = (224, 224)
                 img_resized = image.resize(target_size)
                 img_array = np.array(img_resized) / 255.0
-                img_array = np.expand_dims(img_array, axis=0)
-                input_tensor = tf.convert_to_tensor(img_array, dtype=tf.float32)
+                img_array = np.expand_dims(img_array, axis=0).astype(np.float32)
+                input_tensor = tf.convert_to_tensor(img_array)
                 
                 # Inference
                 try:
